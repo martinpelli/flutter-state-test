@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
-  const ButtonWidget();
+  final void Function() onPressed;
+  const ButtonWidget({required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class ButtonWidget extends StatelessWidget {
         style: ButtonStyle(
           backgroundColor: WidgetStatePropertyAll(Colors.blue[300]),
         ),
-        onPressed: () => print("Edit here"),
+        onPressed: onPressed,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: const Icon(Icons.plus_one),

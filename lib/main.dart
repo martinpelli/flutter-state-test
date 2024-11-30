@@ -6,7 +6,14 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _counter = 28;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,11 +25,17 @@ class MyApp extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const ButtonFirstLevel(),
-            const CounterFirstWidget(),
+            ButtonFirstLevel(onButtonPressed: increaseCounter),
+            CounterFirstWidget(_counter),
           ],
         ),
       ),
     );
+  }
+
+  void increaseCounter() {
+    setState(() {
+      _counter++;
+    });
   }
 }

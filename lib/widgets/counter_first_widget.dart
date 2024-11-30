@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'counter_widget.dart';
 
 class CounterFirstWidget extends StatelessWidget {
-  const CounterFirstWidget();
+  final int counter;
+  const CounterFirstWidget(this.counter);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.orangeAccent[200],
-      child: const CounterWidget(),
+      child: CounterWidget(counter),
     );
   }
 }
