@@ -7,8 +7,10 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(30.0),
-      child: FlatButton(
-        color: Colors.blue[300],
+      child: TextButton(
+        style: ButtonStyle(
+          backgroundColor: WidgetStatePropertyAll(Colors.blue[300]),
+        ),
         onPressed: () => print("Edit here"),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
